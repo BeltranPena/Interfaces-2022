@@ -235,6 +235,76 @@ section {
     height: 454px;
 }
 
+/* ---------------- Main carousel --------------- */
+header, nav {
+    z-index: 1000000000;
+}
+
+section.main-carousel {
+    margin-top: 4.5em;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.main-carousel-div {
+    width: 100%;
+    max-width: 120em;
+    max-height: 41.5em;
+}
+
+.main-carousel-div .c-container {
+    width: 200%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    transition: all .5s ease;
+    transform: translateX(0%);
+
+    overflow: hidden;
+    max-height: 40em;
+}
+
+.main-carousel-div .c-container div img {
+    object-fit: cover;
+    width:100%;
+    height: 100%;  
+}
+
+.c-container div {
+    /* width: calc(100%/2 -2em) y en el container space-between */
+    width: calc(100% / 2);
+}
+
+.c-nav {
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    top: -70px;
+    z-index: 100000;
+}
+
+.c-nav-point {
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color:#120525;
+    border-radius: 100%;
+    margin: 0.5em;
+}
+
+.active {
+    background-color: #f21d6b;
+}
+
+
+/* ----------------------------------------- */
+
 
 
 @media (min-width: 600px) {
