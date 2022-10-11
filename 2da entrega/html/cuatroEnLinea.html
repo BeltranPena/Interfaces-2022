@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>The Games Store</title>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="../index.html"> <img class="logo" src="../images/logo.png" alt="Logo de The Games Store"></a>
+        </div>
+        <div>
+            <button id="menu-btn"><img class="hamb-img" src="../images/hamb_x.png" alt="Menu"></button>
+        </div>
+    </header>
+    <nav id="vertical-nav" class="display-none">
+        <div class="search">
+            <input type="search" name="" id="">
+            <button disabled="disabled"><iconify-icon icon="akar-icons:search" style="color: #533a76;"></iconify-icon></button>
+        </div>
+        <div>
+            <h1>Perfil</h1>
+            <ul>
+                <li>Mi perfil</li>
+                <li>Mis favoritos</li>
+                <li>Mis juegos</li>
+                <li>Mi carrito</li>
+                <li>Salir</li>
+            </ul>
+        </div>
+        <div>
+            <h1>Categorías</h1>
+            <ul>
+                <li>Acción</li>
+                <li>Aventura</li>
+                <li>Estrategia</li>
+                <li>Lucha</li>
+                <li>Rol</li>
+                <li>RPG</li>
+                <li>Shooter</li>
+                <li>Simuladores</li>
+                <li>Terror</li>
+            </ul>
+        </div>
+        <div class="row center">
+            <div class="elipse"><iconify-icon icon="akar-icons:instagram-fill" style="color: #f21d6b;" width="35" height="35"></iconify-icon></div>
+            <div class="elipse"><iconify-icon icon="akar-icons:facebook-fill" style="color: #f21d6b;" width="35" height="35"></iconify-icon></div>
+            <div class="elipse"><iconify-icon icon="akar-icons:twitter-fill" style="color: #f21d6b;" width="35" height="35"></iconify-icon></div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <nav class="breadcrumbs">
+            <ul>
+                <li><a href="../index.html"><img src="../images/home.png" alt="Home"></a></li>
+                <li>>> Categorías</li>
+                <li>>> Estrategia</li>
+                <li>>> Cuatro casas en línea</li>
+            </ul>
+        </nav> 
+        <div class="game-container">
+            
+            <!-- <div class="game-bkg-images" id="#keep-playing">
+                <div>
+                    <div><img src="../images/juego/hufflepuff.png" alt=""></div>
+                    <div><img src="../images/juego/ravenclaw.png" alt=""></div>
+                </div>
+                <div><img id="center-bkg-img" src="../images/juego/antique.png" alt=""></div>
+                <div>
+                    <div><img src="../images/juego/gryffindor.png" alt=""></div>
+                    <div><img src="../images/juego/slytherin.png" alt=""></div>
+                </div>
+            </div>
+            <div class="game-container-background">
+                <div class="btns-container">
+                    <button class="continueBtn" disabled="disabled"><img src="../images/play.png" alt="play"><p>Continuar</p></button>
+                    <button class="cartBtn" disabled="disabled">Volver a iniciar</button>
+                </div>
+            </div> -->
+
+            <!-- <div class="game-bkg-images" id="#free-game">
+                <div>
+                    <div><img src="../images/juego/hufflepuff.png" alt=""></div>
+                    <div><img src="../images/juego/ravenclaw.png" alt=""></div>
+                </div>
+                <div><img id="center-bkg-img" src="../images/juego/antique.png" alt=""></div>
+                <div>
+                    <div><img src="../images/juego/gryffindor.png" alt=""></div>
+                    <div><img src="../images/juego/slytherin.png" alt=""></div>
+                </div>
+            </div>
+            <div class="game-container-background">
+                <div class="btns-container">
+                    <button class="continueBtn" disabled="disabled"><img src="../images/play.png" alt="play"><p>Jugar</p></button>
+                </div>
+            </div> -->
+
+            <div class="game-bkg-images" id="#premium-game">
+                <div>
+                    <div><img src="../images/juego/hufflepuff.png" alt=""></div>
+                    <div><img src="../images/juego/ravenclaw.png" alt=""></div>
+                </div>
+                <div><img id="center-bkg-img" src="../images/juego/antique.png" alt=""></div>
+                <div>
+                    <div><img src="../images/juego/gryffindor.png" alt=""></div>
+                    <div><img src="../images/juego/slytherin.png" alt=""></div>
+                </div>
+            </div>
+            <div class="game-container-background">
+                <div class="btns-container">
+                    <div class="price"><p id="price">$159.99</p></div>
+                    <button class="buyBtn" id="buyBtn"><p>Comprar</p></button>
+                    <button class="cartBtn" id="cartBtn"><img src="../images/emptyCart.png" alt="play"><p>Agregar al carrito</p></button>
+                    <button class="cartBtn display-none"><img src="../images/fullCart.png" alt="play"><p>Agregado al carrito</p></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="middle-wrapper">
+            <div class="game-description">
+                <div class="game-header">
+                    <div><h1>Cuatro casas en línea</h1></div>
+                    <div class="game-icons row">
+                        <div><div class="elipse"><img src="../images/like.png" alt="like"></div><p>Favoritos</p></div>
+                        <div><div class="elipse"><img src="../images/share.png" alt="share"></div><p>Compartir</p></div>
+                        <div><div class="elipse"><img src="../images/info.png" alt="info"></div><p>Ayuda e instrucciones</p></div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Cuatro casas en línea es una adaptación del clásico juego Conecta cuatro o Cuatro en línea ambienta en el mundo de Harry Potter.</h3> 
+                    <h3>Cada jugador eligirá una casa que lo represente, ganará el juego quien logre alinear de manera horizontal, vertical o diagonal cuatro fichas de la misma casa.</h3> 
+                    <ul>
+                        <li>
+                            <h3>Revisa este link para averiguar cuál es la casa que te representa:</h3>
+                            <a href="https://www.huffingtonpost.es/mitchell-parker/la-casa-de-hogwarts-a-la-que-perteneces-revela-tus-rasgos-psicol_a_23023755/" target="_blank" rel="noopener noreferrer">
+                                https://www.huffingtonpost.es/mitchell-parker/la-casa-de-hogwarts-a-la-que-perteneces-revela-tus-rasgos-psicol_a_23023755/
+                            </a>   
+                        </li>
+                        <li>
+                            <h3>Aquí puedes ver más sobre el Cuatro en línea clásico:</h3>
+                            <a href="https://www.youtube.com/watch?v=JBSbiilzg9U" target="_blank" rel="noopener noreferrer">
+                                https://www.youtube.com/watch?v=JBSbiilzg9U
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="features-carousel">
+                    <div class="features-cards-list">
+                        <div class="feature-card">
+                            <div><img src="../images/juego/hufflepuff.png" alt=""></div>
+                            <div><p>Las fichas bordó representan la casa Gryffindor, hogar de personalidades valientes y, a veces, imprudentes en su valentía.</p></div>
+                        </div>
+                        <div class="feature-card">
+                            <div><img src="../images/juego/gryffindor.png" alt=""></div>
+                            <div><p>Las fichas azules llevan el escudo de la casa Ravenclaw,  cuyos integrantes se caracterizan por su inteligencia y alto rendimiento.</p></div>
+                        </div>
+                        <div class="feature-card">
+                            <div><img src="../images/juego/ravenclaw.png" alt=""></div>
+                            <div><p>La ficha verde representa a la casa Slytherin, propia de las personalidades de gran astucia y ambición.</p></div>
+                        </div>
+                        <div class="feature-card">
+                            <div><img src="../images/juego/slytherin.png" alt=""></div>
+                            <div><p>La ficha amarilla lleva el escudo de la casa  Hufflepuff, ideal para aquellos jugadores leales y solidarios.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="help">
+                <h3>Ayuda e instrucciones</h3>
+                <div>
+                    <h4>¿Cómo se juega?</h4>
+                    <p>Cada jugador dispone de 21 fichas de la casa que haya escogido, de entre las cuatro casas disponibles. 
+                        Por turnos, los jugadores deben introducir una ficha en la columna que prefieran (siempre que no esté 
+                        completa) y ésta caerá a la posición más baja.
+                    </p>
+                </div>
+                <div>
+                    <h4>Objetivo</h4>
+                    <p>El objetivo de Cuatro casas en línea es alinear cuatro fichas consecutivas de un mismo color en horizontal, 
+                        vertical o diagonal sobre un tablero formado por seis filas y siete columnas.
+                        Si todas las columnas están llenas pero nadie ha hecho una fila válida, hay empate.​
+                    </p>
+                </div>
+                <div>
+                    <h4>Tips y ayuda</h4>
+                    <ul>
+                        <li>El primer jugador tiene más posibilidades de ganar si introduce la primera ficha en la columna central.</li>
+                        <li>Si lo hace en las contiguas se puede forzar un empate,</li>
+                        <li>Si la mete en las más alejadas del centro, su rival puede vencerle con mayor facilidad.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <section class="comunidad">
+            <h3>Comunidad</h3>
+                <div class="cajaComentario">
+                    <iconify-icon icon="carbon:user-avatar-filled-alt" style="color: #f21d6b;" width="40" height="40"></iconify-icon>
+                    <input type="text" placeholder="Escribe un comentario">
+                    <input class="comentar" type="button" value="Comentar">
+                </div>
+    
+            <div class="comentarios">
+                <div class="comentario">
+                    <img src="../images/usuarios/usuario1.jpg">
+                    <div class="comment">
+                        <h4>Omar Reina</h4>
+                        <p>Este juego y yo no nos llevamos, mi niño me da unas arrastradas que mejor lo dejé por la paz, 
+                        hasta a su maestra de la escuela le gana jajajaja</p>
+                    </div>
+                    <div class="like-dislike">
+                        <div class="">
+                            <iconify-icon icon="bx:like" style="color: #f21d6b;" width="24" height="24"></iconify-icon>
+                            <p>0</p>
+                        </div>
+                        <div class="">
+                            <iconify-icon icon="bx:dislike" style="color: #f21d6b;" width="24" height="24"></iconify-icon>
+                            <p>0</p>
+                        </div>
+                    </div>
+                    <input type="button" value="responder">
+                    
+                </div>
+
+                <div class="comentario">
+                    <img src="../images/usuarios/usuario2.jpg">
+                    <div class="comment">
+                        <h4>Dany Winchester</h4>
+                        <p>Yo buscaba como jugar de 4 en futbol y termine aca por accidente. Me gusto, nuevo sub</p>
+                    </div>
+                    <div class="like-dislike">
+                        <div class="">
+                            <iconify-icon icon="bx:like" style="color: #f21d6b;" width="24" height="24"></iconify-icon>
+                            <p>0</p>
+                        </div>
+                        <div class="">
+                            <iconify-icon icon="bx:dislike" style="color: #f21d6b;" width="24" height="24"></iconify-icon>
+                            <p>0</p>
+                        </div>
+                    </div>
+                    <input type="button" value="responder">
+                    
+                </div>
+
+                <div class="comentario">
+                    <img src="../images/usuarios/usuario3.jpg">
+                    <div class="comment">
+                        <h4>Fernando Santos</h4>
+                        <p>ando viendo un podcast de cinicos y tenia que buscar como se juega esta madre, aparte siempre lo veia en canal 5 a cada rato cuando era chamaco, nunca lo quise pero igual me preguntaba como se jugaba</p>
+                    </div>
+                    <div class="like-dislike">
+                        <div class="">
+                            <iconify-icon icon="bx:like" style="color: #f21d6b;" width="24" height="24"></iconify-icon>
+                            <p>0</p>
+                        </div>
+                        <div class="">
+                            <iconify-icon icon="bx:dislike" style="color: #f21d6b;" width="24" height="24"></iconify-icon>
+                            <p>0</p>
+                        </div>
+                    </div>
+                    <input type="button" value="responder">
+                    
+                </div>
+
+                <div class="comentario">
+                    <img src="../images/usuarios/usuario4.jpg">
+                    <div class="comment">
+                        <h4>Mafe Montero</h4>
+                        <p>una pregunta cuando se gana una partida en la proxima tira primero el que gano la ocacion anterir o tambien es a suerte
+                        </p>
+                    </div>
+                    <div class="like-dislike">
+                        <div class="">
+                            <iconify-icon icon="bx:like" style="color: #f21d6b;" width="24" height="24"></iconify-icon>
+                            <p>0</p>
+                        </div>
+                        <div class="">
+                            <iconify-icon icon="bx:dislike" style="color: #f21d6b;" width="24" height="24"></iconify-icon>
+                            <p>0</p>
+                        </div>
+                    </div>
+                    <input type="button" value="responder">
+                    
+                </div>
+
+                <div class="comentario">
+                    <img src="../images/usuarios/usuario5.jpg">
+                    <div class="comment">
+                        <h4>Pablo González Domínguez</h4>
+                        <p>El mejor kkk</p>
+                    </div>
+                    <div class="like-dislike">
+                        <div class="">
+                            <iconify-icon icon="bx:like" style="color: #f21d6b;" width="24" height="24"></iconify-icon>
+                            <p>0</p>
+                        </div>
+                        <div class="">
+                            <iconify-icon icon="bx:dislike" style="color: #f21d6b;" width="24" height="24"></iconify-icon>
+                            <p>0</p>
+                        </div>
+                    </div>
+                    <input type="button" value="responder">
+                    
+                </div>
+
+                <div class="comentario">
+                    <img src="../images/usuarios/usuario6.jpg">
+                    <div class="comment">
+                        <h4>UnKnoWn</h4>
+                        <p>Y si se llena el tablero y nadie forma la línea de 4?
+                        </p>
+                    </div>
+                    <div class="like-dislike">
+                        <div class="">
+                            <iconify-icon icon="bx:like" style="color: #f21d6b;" width="24" height="24"></iconify-icon>
+                            <p>0</p>
+                        </div>
+                        <div class="">
+                            <iconify-icon icon="bx:dislike" style="color: #f21d6b;" width="24" height="24"></iconify-icon>
+                            <p>0</p>
+                        </div>
+                    </div>
+                    <input type="button" value="responder">
+                    
+                </div>
+
+                <div class="comentario">
+                    <img src="../images/carousels/juegos/kirby.png">
+                    <div class="comment">
+                        <h4>Jhoel Marquez</h4>
+                        <p>le ganeeee jajajaja
+                        </p>
+                    </div>
+                    <div class="like-dislike">
+                        <div class="">
+                            <iconify-icon icon="bx:like" style="color: #f21d6b;" width="24" height="24"></iconify-icon>
+                            <p>0</p>
+                        </div>
+                        <div class="">
+                            <iconify-icon icon="bx:dislike" style="color: #f21d6b;" width="24" height="24"></iconify-icon>
+                            <p>0</p>
+                        </div>
+                    </div>
+                    <input type="button" value="responder">
+                    
+                </div>
+            </div>
+        </section>
+       
+    </div>
+    <footer>
+        <div>
+            <div>
+                <img class="footer-logo" src="../images/logo.png" alt="Logo de The Games Store">
+            </div>
+        </div>
+        <div class="nav">
+            <div>
+                <h1>Tienda</h1>
+                <ul>
+                    <li>Juegos clásicos</li>
+                    <li>Juegos premium</li>
+                    <li>Lanzamientos</li>
+                    <li>Ofertas</li>
+                </ul>
+            </div>
+            <div>
+                <h1>Cuenta</h1>
+                <ul>
+                    <li>Mi perfil</li>
+                    <li>Mis favoritos</li>
+                    <li>Mis juegos</li>
+                </ul>
+            </div>
+            <div>
+                <h1>Ayuda</h1>
+                <ul>
+                    <li>Preguntas frecuentes</li>
+                    <li>Términos y condiciones</li>
+                    <li>Soporte técnico</li>
+                    <li>Contacto</li>
+                </ul>
+            </div>
+        </div>
+        <div class="aside">
+            <div class="row center">
+                <div class="elipse"><iconify-icon icon="akar-icons:instagram-fill" style="color: #f21d6b;" width="35" height="35"></iconify-icon></div>
+                <div class="elipse"><iconify-icon icon="akar-icons:facebook-fill" style="color: #f21d6b;" width="35" height="35"></iconify-icon></div>
+                <div class="elipse"><iconify-icon icon="akar-icons:twitter-fill" style="color: #f21d6b;" width="35" height="35"></iconify-icon></div>
+            </div>
+            <div>
+                <h1>Newsletter</h1>
+                <h2>¡Suscribite para conocer novedades y descuentos!</h2>
+                <div class="suscribe">
+                    <input type="email" name="" id="" placeholder="Email...">
+                    <button disabled="disabled">Suscribirme</button>
+                </div>
+            </div>
+        </div>
+        <div class="leyend">
+            <p>The Game Store © 2016 <a href="../html/about.html">Creado por BGIT</a></p>
+        </div>
+    </footer>
+    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+</body>
+</html>
