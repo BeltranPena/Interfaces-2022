@@ -28,6 +28,39 @@ cNavPoints.forEach((point, i) => {
     });
 });
 
+//--------------- Carousel Navigation -----------------------------
+let backBtn = document.querySelector(".back-btn");
+let frwdBtn = document.querySelector(".forward-btn");
+
+let backBtns = document.querySelectorAll(".carousel-nav .back-btn");
+let frwrdBtns = document.querySelectorAll(".carousel-nav .forward-btn");
+
+frwrdBtns.forEach((frwdBtn) => {
+    frwdBtn.addEventListener("click", () => {
+        let backBtn = frwdBtn.previousElementSibling;
+        let carousel = (frwdBtn.parentElement).nextElementSibling;
+        carousel.scrollTo({
+            behavior: 'smooth',
+            left: window.innerWidth
+        })
+        if(!backBtn.classList.contains("visible")) backBtn.classList.add("visible");
+        frwdBtn.classList.add("hidden");
+    });
+});
+
+backBtns.forEach((backBtn) => {
+    backBtn.addEventListener("click", () => {
+        let frwdBtn = backBtn.nextElementSibling;
+        let carousel = (backBtn.parentElement).nextElementSibling;
+        carousel.scrollTo({
+            behavior: 'smooth',
+            left: -(window.innerWidth)
+        })
+        if(frwdBtn.classList.contains("hidden")) frwdBtn.classList.remove("hidden");
+        backBtn.classList.remove("visible");
+    });
+});
+
 /*----------------------- Buttons Cards ---------------------------*/
 let addToCartBtns = document.querySelectorAll("#cartBtn");
 addToCartBtns.forEach((btn, i) => {
@@ -81,32 +114,6 @@ buyBtns.forEach((btn, i) => {
         });
     });
 });
-
-
-
-// let cards = document.querySelectorAll(".card");
-// cards.forEach((card, i) => {
-//     card.addEventListener('mouseover', () => {showActions(i)});
-// });
-
-// function showActions(i) {
-//     let card = cards[i];
-//     card.classList.add("onmouseover");
-//     let div = document.createElement("div");
-//     let buyBtn = document.createElement("button");
-//     let cartBtn = document.createElement("button");
-//     let price = document.createTextNode("$154.99");
-
-//     div.appendChild(buyBtn);
-//     div.appendChild(cartBtn);
-//     div.appendChild(price);
-
-//     div.classList.add("actions-popup");
-
-//     card.appendChild(price);
-//     console.log("chan");
-// }
-
 
 
 /*----------------------- Loader -------------------------*/
@@ -167,7 +174,7 @@ function initIntervals() {
         span.innerHTML = loaded.toFixed(0) + " %";
         if(loadingDelay > 1) {
             loadingDelay--;
-            console.log(loadingDelay);
+            // console.log(loadingDelay);
         } else {
             clearInterval(barInterval);
             clearInterval(colorInterval);
