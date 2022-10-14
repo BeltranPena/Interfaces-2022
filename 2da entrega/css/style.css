@@ -655,13 +655,113 @@ nav.breadcrumbs ul img {
     z-index: 100;
 }
 
+/*----------- Share Pop up -------*/
+div#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.5;
+    background-color: #261340;
+    display: none;
+    z-index: 99;
+}
+
+div#share-pop-up {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2em;
+    width: 34em;
+    height: 19em;
+    background-color: #D9D9D9;
+}
+
+div#share-pop-up.visible,
+div#share-pop-up.visible ~ div#overlay {
+  display: flex;
+}
+
+div#share-pop-up > div {
+    width: 80%;
+}
+
+button#close-pop-up {
+    background-color: unset;
+}
+
+button#close-pop-up:hover {
+    transform: scale(120%);
+    transition: all .3s ease-in-out;
+}
+
+div#share-pop-up > div:nth-child(1) {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 900;
+    font-size: 1.1em;
+    letter-spacing: 0.19em;
+    color: #120525;
+}
+
+div#share-pop-up > div:nth-child(2) {
+    justify-content: space-around;
+}
+
+div.link-copy {
+    text-align: center;
+    justify-content: center;
+}
+
+.link-copy input {
+    height: 29.579999923706055px;
+    width: 263px;
+    border-radius: 3px;
+    padding-left: 1em;
+    color: #120525;
+    margin-right: -2px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin-bottom: 10%;
+}
+
+.link-copy button {
+    margin-left: -2px;
+    width: 111.11px;
+    height: 30px;
+    background-color: #120525;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    border-radius: 3px;  
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); 
+}
+
+.link-copy button:hover {
+    background-color: #261340;
+    transition: all .5s ease;
+}
+
+.link-copy button:active {
+    background-color: #261340;
+    transition: all .5s ease;
+}
+
 /*------------------*/
 
 div.game-container {
     position: relative;
-    width: 80vw;
+    width: 70vw;
     min-width: 15em;
-
+    height: 800px;
     background: rgba(217, 217, 217, 0.5);
     border: 3px solid #120525;
     border-radius: 3px;
@@ -711,8 +811,8 @@ div.middle-wrapper {
     width: 80%;
 }
 
-div.middle-wrapper > div, div.help div {
-    margin-bottom: 3em;
+div.game-description, div.help {
+    margin: 0 5em;
 }
 
 div.game-description a {
@@ -723,50 +823,47 @@ div.game-description a:hover {
     cursor: pointer;
 }
 
+div.game-header h1 {
+    font-size: 1.5em;
+}
+
 div.game-header {
     text-align: center;
     margin: 2em;
 }
 
-div.game-icons {
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-div.game-icons div:nth-child(2) {
-    margin: 0em 2em;
-}
-
 div.game-icons div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 9em;
 }
 
-div.game-icons img {
-    height: 2em;
+div.features-carousel {
+    margin: 5em 0em;
 }
 
-div.game-icons p {
-    font-size: .6em;
-    text-align: center;
-    align-content: flex-start;
+div.help > div {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    margin-bottom: 4em;
 }
 
 div.help h3 {
+    font-size: 1.5em;
     color: #f21d6b;
     margin: 2em 0em;
 }
 
 div.help h4 {
     color:#FCACC1;
+    margin: 1em 0em;
 }
 
 div.help ul li {
     list-style-type: disc;
+    margin-left: 2em;
 }
 
+
+/*-----*/
 
 .display-none {
     display: none;
@@ -777,16 +874,76 @@ div.help ul li {
     margin: 0 auto;
 }
 
-.cajaComentario{
+section.comunidad h3 {
+    color: #f21d6b;
+    font-size: 1.5em;
+    margin: 2em 0em;
+}
+
+.cajaComentario {
     display: flex;
     flex-direction: row;
     align-items: center;
     background: rgba(217, 217, 217, 1);
-    height: 50px;
+    height: 80px;
     margin-bottom: 20px;
+    padding: 0em 2em;
 }
 
-.comentarios{
+.cajaComentario > div {
+    padding: 1.5em;
+    width: 80%;
+}
+
+.cajaComentario input {
+    background-color: unset;
+    width: 100%;
+    border-bottom: solid grey 1px;
+    padding: 1em 0em;
+}
+
+.cajaComentario input:active {
+    border-bottom:#120525 solid 2px;
+}
+
+.cajaComentario > div:nth-child(1) {
+    background-color: #17E8CF;
+    width: 15%;
+}
+.comment-btns {
+    visibility: hidden;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.comment-btns.visible {
+    visibility: visible;
+}
+
+.comment-btns input {
+    padding: 0;
+    margin: 0em .5em;
+}
+
+.comment-btns input:nth-child(2) {
+    background-color: #120525;
+}
+
+.comment-btns input:hover {
+    background-color: #120525;
+}
+
+.comment-btns input:nth-child(2):hover {
+    background-color:#533A76;
+}
+
+.comunidad input:not(#comment-input) {
+    text-transform: capitalize;
+}
+
+.comentarios {
     background:rgba(217, 217, 217, 1);
     color: #120525;
     max-height: none;
@@ -798,7 +955,8 @@ div.help ul li {
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
-    border-bottom: 1px solid #120525;
+    padding: 2em;
+    /* border-bottom: 1px solid #120525; */
 }
 
 .comentario > img{
@@ -806,6 +964,7 @@ div.help ul li {
     height: 40px;
     border-radius: 50%;
     margin: 10px;
+    margin-right: 2em;
 }
 
 .comment{
@@ -815,7 +974,7 @@ div.help ul li {
 .like-dislike{
     display: flex;
     flex-direction: row;
-    margin-left: 60px;
+    margin-left: 5em;
 }
 
 .like-dislike > div{
@@ -839,12 +998,14 @@ div.help ul li {
 /*------------ Features carousel ---------------*/
 div.features-cards-list {
     display: flex;
+    justify-content: space-evenly;
 }
 
 div.feature-card {
     background-color: #120525;
-    height: 363px;
-    width: 240px;
+    /* height: 563px; */
+    width: 360px;
+    height: 400px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -853,13 +1014,21 @@ div.feature-card {
     margin: 2em;
 }
 
+div.features-cards-list >  div.feature-card:nth-child(1) {
+    margin-left: 0;
+}
+
+div.features-cards-list >  div.feature-card:nth-child(4) {
+    margin-right: 0;
+}
+
 div.feature-card img {
     margin-top: 4em;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     position: relative;
-    height: 40px;
-    width: 42.90156555175781px;
-    border-radius: 113.78555297851562px;
+    height: 44px;
+    width: 50px;
+    border-radius: 100%;
 }
 
 div.feature-card p {
@@ -923,7 +1092,7 @@ div.feature-card p {
 }
 
 .like svg :active {
-    fill: red;
+    fill:#F21D6B;
 }
 
 .reserva{
@@ -935,7 +1104,6 @@ div.feature-card p {
     font-size: 28px;
     color: rgba(23, 232, 207, 1);
     letter-spacing: 3px;
-
 }
 
 .reserva:hover{
@@ -1061,18 +1229,23 @@ div.feature-card p {
     }
     
     nav.breadcrumbs li {
-        font-size: 12px;
-        margin-left: 1em;
+        font-size: 1em;
+        letter-spacing: .2em;
+        margin-left: 2em;
+    }
+
+    nav.breadcrumbs ul {
+        align-items: baseline;
     }
     
     nav.breadcrumbs ul img {
-        width: 21px;
-        height: 21px;
+        width: 24px;
+        height: 24px;
     }
 
     .elipse:hover {
         background-color: #261340;
-        transition: all 1s ease;
+        transition: all .8s ease;
     }
 
     .upcoming-releases {
@@ -1166,10 +1339,6 @@ div.feature-card p {
         font-size: 1.5em;
     }
 
-    div.container div.game-container {
-        min-height: 23.75em;
-    }
-
     nav.breadcrumbs {
         margin-top: 5.5em;
         padding: 1em;
@@ -1217,7 +1386,7 @@ div.feature-card p {
 @media only screen and (min-width:1400px) {
 
     div.container div.game-container {
-        height: 480px;
+        height: 36em;
     }
 
     section div.small.carousel img {
@@ -1228,53 +1397,6 @@ div.feature-card p {
     
 }
 
-/* @media only screen and (min-width:1500px) {
-
-    body section:first-of-type > div {
-        max-height: 50em;
-    }
-
-    body section:first-of-type > div .c-content {
-        max-height: 50em;
-    }
-
-    .upcoming-releases {
-        top: 35%;
-        padding: 2em;
-        font-size: 2.5em;
-    }
-
-}
-
-@media only screen and (min-width:1800px) {
-
-    body section:first-of-type > div {
-        max-height: 55em;
-    }
-
-    body section:first-of-type > div .c-content {
-        max-height: 55em;
-    }
-
-    .upcoming-releases {
-        padding: 2em 6em;
-        font-size: 2.5em;
-    }
-
-}
-
-
-@media only screen and (min-width:2000px) {
-
-    body section:first-of-type > div {
-        max-height: 60em;
-    }
-
-    body section:first-of-type > div .c-content {
-        max-height: 60em;
-    }
-
-} */
 
 
 

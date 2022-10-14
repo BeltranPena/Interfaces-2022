@@ -84,7 +84,6 @@ buyBtns.forEach((btn, i) => {
 
 
 
-
 // let cards = document.querySelectorAll(".card");
 // cards.forEach((card, i) => {
 //     card.addEventListener('mouseover', () => {showActions(i)});
@@ -107,6 +106,7 @@ buyBtns.forEach((btn, i) => {
 //     card.appendChild(price);
 //     console.log("chan");
 // }
+
 
 
 /*----------------------- Loader -------------------------*/
@@ -179,15 +179,17 @@ function initIntervals() {
 
 function showLoading() {
     const container = document.querySelector(".loading-container");
-    const circle = createCircle();
-    const bar = createBar();
-    container.appendChild(circle);
-    container.appendChild(bar);
-    initIntervals();
-    setTimeout(() => {
-        container.remove();
-        document.querySelector("#body").classList.remove("display-none");
-    }, 5500);
+    if(container != null) {
+        const circle = createCircle();
+        const bar = createBar();
+        container.appendChild(circle);
+        container.appendChild(bar);
+        initIntervals();
+        setTimeout(() => {
+            container.remove();
+            document.querySelector("#body").classList.remove("display-none");
+        }, 5500);
+    }
 }
 
 showLoading();
