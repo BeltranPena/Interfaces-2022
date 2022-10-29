@@ -10,13 +10,9 @@ menuBtn.addEventListener("click", () => {
 });
 
 
-<<<<<<< HEAD
-//--------------- Main carousel -----------------------------
-=======
 
 //--------------- Main carousel -----------------------------
 
->>>>>>> tpe2
 const imgs = 2;
 let moveX = -(100/imgs);
 let cContainer = document.querySelector("#mc-content");
@@ -34,26 +30,6 @@ cNavPoints.forEach((point, i) => {
     });
 });
 
-<<<<<<< HEAD
-/*----------------------- Buttons Cards ---------------------------*/
-let addToCartBtns = document.querySelectorAll("#cartBtn");
-addToCartBtns.forEach((btn, i) => {
-    addToCartBtns[i].addEventListener("click", () => {
-        btn.classList.add("display-none");
-        let activeBtn = btn.nextElementSibling;
-        activeBtn.classList.remove("display-none");
-        activeBtn.addEventListener("click", () => {
-            activeBtn.classList.add("display-none");
-            btn.classList.remove("display-none");
-        });
-    });
-});
-
-
-let downloadTemplate = `<div class="btns-container">
-                                <div class="price"><p>Ya puedes descargar tu juego!!</p></div>
-                                <button class="continueBtn" id="downloadBtn"><img src="../images/download.png" alt="download"><p>Descargar</p></button>
-=======
 
 
 //--------------- Carousel Navigation -----------------------------
@@ -196,7 +172,6 @@ function setBuyBtns() {
     let downloadTemplate = `<div class="btns-container">
                                 <div class="price"><p>Ya puedes descargar tu juego!!</p></div>
                                 <button class="continueBtn" id="downloadBtn"><img src="images/download.png" alt="download"><p>Descargar</p></button>
->>>>>>> tpe2
                             </div>`;
 
 let loadingTemplate = `<div class="btns-container">
@@ -215,66 +190,23 @@ buyBtns.forEach((btn, i) => {
         downloadBtn.addEventListener('click', () => {
             let btnsContainer = downloadBtn.parentElement;
             btnsContainer.innerHTML = loadingTemplate;
-<<<<<<< HEAD
-=======
 
->>>>>>> tpe2
             btnsContainer.classList.add("loading-img-div");
 
             let circle = createCircle();
             let circles = document.querySelectorAll(".element");
             circles.forEach((circle) => {circle.classList.add(".small-loading");})
-<<<<<<< HEAD
-            let bar = createBar();
-            bar.classList.add("display-none");
-            btnsContainer.appendChild(circle);
-            btnsContainer.appendChild(bar);
-            initIntervals();
-            setTimeout(() => {
-                // btnsContainer.remove(); 
-                btnsContainer.innerHTML = `<button class="continueBtn" disabled="disabled"><img src="../images/play.png" alt="play"><p>Jugar</p></button>`;
-=======
             btnsContainer.appendChild(circle);
 
             initIntervals();
             setTimeout(() => {
                 btnsContainer.innerHTML = `<button class="continueBtn" disabled="disabled"><img src="images/play.png" alt="play"><p>Jugar</p></button>`;
->>>>>>> tpe2
             }, 5500);
         });
     });
 });
 
-<<<<<<< HEAD
-
-
-
-// let cards = document.querySelectorAll(".card");
-// cards.forEach((card, i) => {
-//     card.addEventListener('mouseover', () => {showActions(i)});
-// });
-
-// function showActions(i) {
-//     let card = cards[i];
-//     card.classList.add("onmouseover");
-//     let div = document.createElement("div");
-//     let buyBtn = document.createElement("button");
-//     let cartBtn = document.createElement("button");
-//     let price = document.createTextNode("$154.99");
-
-//     div.appendChild(buyBtn);
-//     div.appendChild(cartBtn);
-//     div.appendChild(price);
-
-//     div.classList.add("actions-popup");
-
-//     card.appendChild(price);
-//     console.log("chan");
-// }
-
-=======
 }
->>>>>>> tpe2
 
 /*----------------------- Loader -------------------------*/
 
@@ -334,11 +266,7 @@ function initIntervals() {
         span.innerHTML = loaded.toFixed(0) + " %";
         if(loadingDelay > 1) {
             loadingDelay--;
-<<<<<<< HEAD
-            console.log(loadingDelay);
-=======
             // console.log(loadingDelay);
->>>>>>> tpe2
         } else {
             clearInterval(barInterval);
             clearInterval(colorInterval);
@@ -350,20 +278,6 @@ function initIntervals() {
 
 function showLoading() {
     const container = document.querySelector(".loading-container");
-<<<<<<< HEAD
-    const circle = createCircle();
-    const bar = createBar();
-    container.appendChild(circle);
-    container.appendChild(bar);
-    initIntervals();
-    setTimeout(() => {
-        container.remove();
-        document.querySelector("#body").classList.remove("display-none");
-    }, 5500);
-}
-
-showLoading();
-=======
     if(container != null) {
         const circle = createCircle();
         const bar = createBar();
@@ -400,4 +314,3 @@ window.onload = () => {
     setAddToCartBtns();
     setBuyBtns();
 }
->>>>>>> tpe2
