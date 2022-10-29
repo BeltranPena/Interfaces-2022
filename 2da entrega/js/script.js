@@ -10,7 +10,13 @@ menuBtn.addEventListener("click", () => {
 });
 
 
+<<<<<<< HEAD
 //--------------- Main carousel -----------------------------
+=======
+
+//--------------- Main carousel -----------------------------
+
+>>>>>>> tpe2
 const imgs = 2;
 let moveX = -(100/imgs);
 let cContainer = document.querySelector("#mc-content");
@@ -28,6 +34,7 @@ cNavPoints.forEach((point, i) => {
     });
 });
 
+<<<<<<< HEAD
 /*----------------------- Buttons Cards ---------------------------*/
 let addToCartBtns = document.querySelectorAll("#cartBtn");
 addToCartBtns.forEach((btn, i) => {
@@ -46,6 +53,150 @@ addToCartBtns.forEach((btn, i) => {
 let downloadTemplate = `<div class="btns-container">
                                 <div class="price"><p>Ya puedes descargar tu juego!!</p></div>
                                 <button class="continueBtn" id="downloadBtn"><img src="../images/download.png" alt="download"><p>Descargar</p></button>
+=======
+
+
+//--------------- Carousel Navigation -----------------------------
+
+let backBtn = document.querySelector(".back-btn");
+let frwdBtn = document.querySelector(".forward-btn");
+
+let backBtns = document.querySelectorAll(".carousel-nav .back-btn");
+let frwrdBtns = document.querySelectorAll(".carousel-nav .forward-btn");
+
+frwrdBtns.forEach((frwdBtn) => {
+    frwdBtn.addEventListener("click", () => {
+        let backBtn = frwdBtn.previousElementSibling;
+        let carousel = (frwdBtn.parentElement).nextElementSibling;
+        carousel.scrollTo({
+            behavior: 'smooth',
+            left: window.innerWidth
+        })
+        if(!backBtn.classList.contains("visible")) backBtn.classList.add("visible");
+        frwdBtn.classList.add("hidden");
+    });
+});
+
+backBtns.forEach((backBtn) => {
+    backBtn.addEventListener("click", () => {
+        let frwdBtn = backBtn.nextElementSibling;
+        let carousel = (backBtn.parentElement).nextElementSibling;
+        carousel.scrollTo({
+            behavior: 'smooth',
+            left: -(window.innerWidth)
+        })
+        if(frwdBtn.classList.contains("hidden")) frwdBtn.classList.remove("hidden");
+        backBtn.classList.remove("visible");
+    });
+});
+
+
+
+/*----------------------- Cards Hover Functionality ----------------------------*/
+
+function createBtn(className, id = null, text, imgSrc = null) {
+    //Crea un botón...
+    let btn = document.createElement("button");
+    let p = document.createElement("p");
+    let img;
+
+    //Agrega clase, id, texto e imagen...
+    btn.classList.add(className);
+    if(id != null) btn.id = id;
+    
+    if(imgSrc != null) {
+        img = document.createElement("img");
+        img.src = imgSrc;
+        btn.appendChild(img);
+    }
+
+    p.appendChild(document.createTextNode(text));
+    btn.appendChild(p);
+
+    return btn;
+
+}
+
+function createCardOverlay(price = null, className = null) {
+    //Crea un overlay...
+    let overlay = document.createElement("div");
+    overlay.classList.add(className);
+
+    let btnsContainer = document.createElement("div");
+    btnsContainer.classList.add("btns-container");
+
+    let btns = [];
+
+    if(price != null) {
+
+         //Le agrega el precio
+        let priceDiv = document.createElement("div");
+        let priceP = document.createElement("p");
+        priceP.id = "price";
+        priceP.appendChild(document.createTextNode(price));
+        priceDiv.appendChild(priceP);
+
+        overlay.appendChild(priceDiv);
+
+        //y los botones (comprar y agregar al carrito)...
+        btns.push(createBtn("buyBtn", "buyBtn", "Comprar", null));
+        btns.push(createBtn("cartBtn", "cartBtn", "Agregar al carrito", "images/emptyCart.png"));
+        let fullcartBtn = createBtn("cartBtn", null, "Agregado al carrito", "images/fullCart.png");
+        fullcartBtn.classList.add("display-none");
+        btns.push(fullcartBtn);
+       
+    } else {
+        
+        //Agrega los botones (continuar jugando y volver a inicio)...
+        btns.push(createBtn("continueBtn", null, "Continuar", "images/play.png"));
+        btns.push(createBtn("cartBtn", null, "Volver a iniciar", null));
+
+    }
+
+    for (const btn of btns) btnsContainer.appendChild(btn); 
+
+    overlay.appendChild(btnsContainer);
+
+    return overlay;
+    
+}   
+
+//Crea un overlay invisible junto a cada card que es mostrado al hacer hover sobre ella
+function createCardFunctionality(card) {
+    let carousel = card.parentElement.parentElement;
+    let overlay;
+
+    if(carousel.id == "continue-playing-carousel") overlay = createCardOverlay(null, "keep-playing-card");
+    else overlay = createCardOverlay("$159.99", "buy-card-overlay");
+
+    card.insertAdjacentElement("afterbegin", overlay);
+    card.addEventListener("mouseenter", () => {overlay.classList.add("visible");});
+    card.addEventListener("mouseleave", () => {overlay.classList.remove("visible");});
+}
+
+
+
+/*----------------------- Cards Btns Functionality ---------------------------*/
+function setAddToCartBtns() {
+    let addToCartBtns = document.querySelectorAll("#cartBtn");
+    addToCartBtns.forEach((btn, i) => {
+        addToCartBtns[i].addEventListener("click", () => {
+            btn.classList.add("display-none");
+            let activeBtn = btn.nextElementSibling;
+            activeBtn.classList.remove("display-none");
+            activeBtn.addEventListener("click", () => {
+                activeBtn.classList.add("display-none");
+                btn.classList.remove("display-none");
+            });
+        });
+    });
+}
+
+function setBuyBtns() {
+    let downloadTemplate = `<div class="btns-container">
+                                <div class="price"><p>Ya puedes descargar tu juego!!</p></div>
+                                <button class="continueBtn" id="downloadBtn"><img src="images/download.png" alt="download"><p>Descargar</p></button>
+>>>>>>> tpe2
                             </div>`;
 
 let loadingTemplate = `<div class="btns-container">
@@ -64,11 +215,16 @@ buyBtns.forEach((btn, i) => {
         downloadBtn.addEventListener('click', () => {
             let btnsContainer = downloadBtn.parentElement;
             btnsContainer.innerHTML = loadingTemplate;
+<<<<<<< HEAD
+=======
+
+>>>>>>> tpe2
             btnsContainer.classList.add("loading-img-div");
 
             let circle = createCircle();
             let circles = document.querySelectorAll(".element");
             circles.forEach((circle) => {circle.classList.add(".small-loading");})
+<<<<<<< HEAD
             let bar = createBar();
             bar.classList.add("display-none");
             btnsContainer.appendChild(circle);
@@ -77,11 +233,19 @@ buyBtns.forEach((btn, i) => {
             setTimeout(() => {
                 // btnsContainer.remove(); 
                 btnsContainer.innerHTML = `<button class="continueBtn" disabled="disabled"><img src="../images/play.png" alt="play"><p>Jugar</p></button>`;
+=======
+            btnsContainer.appendChild(circle);
+
+            initIntervals();
+            setTimeout(() => {
+                btnsContainer.innerHTML = `<button class="continueBtn" disabled="disabled"><img src="images/play.png" alt="play"><p>Jugar</p></button>`;
+>>>>>>> tpe2
             }, 5500);
         });
     });
 });
 
+<<<<<<< HEAD
 
 
 
@@ -108,6 +272,9 @@ buyBtns.forEach((btn, i) => {
 //     console.log("chan");
 // }
 
+=======
+}
+>>>>>>> tpe2
 
 /*----------------------- Loader -------------------------*/
 
@@ -167,7 +334,11 @@ function initIntervals() {
         span.innerHTML = loaded.toFixed(0) + " %";
         if(loadingDelay > 1) {
             loadingDelay--;
+<<<<<<< HEAD
             console.log(loadingDelay);
+=======
+            // console.log(loadingDelay);
+>>>>>>> tpe2
         } else {
             clearInterval(barInterval);
             clearInterval(colorInterval);
@@ -179,6 +350,7 @@ function initIntervals() {
 
 function showLoading() {
     const container = document.querySelector(".loading-container");
+<<<<<<< HEAD
     const circle = createCircle();
     const bar = createBar();
     container.appendChild(circle);
@@ -191,3 +363,41 @@ function showLoading() {
 }
 
 showLoading();
+=======
+    if(container != null) {
+        const circle = createCircle();
+        const bar = createBar();
+        container.appendChild(circle);
+        container.appendChild(bar);
+        initIntervals();
+        setTimeout(() => {
+            container.remove();
+            document.querySelector("#body").classList.remove("display-none");
+        }, 5500);
+    }
+}
+
+/*----*/
+// document.querySelector("#body").classList.remove("display-none");
+showLoading();
+
+window.onload = () => {
+    if(window.innerWidth > 600) {
+
+        //Crea el overlay de cada card...
+        let cards = document.querySelectorAll(".card");
+        cards.forEach((card) => { createCardFunctionality(card) });
+    
+        //Setea los botones "continuar" para que redirijan al juego...
+        let continueBtns = document.querySelectorAll(".continueBtn");
+        continueBtns.forEach((btn) => { btn.addEventListener("click", () => {
+            console.log("continue btn");
+                location.href = "html/cuatroEnLinea.html";
+            });
+        });
+    
+    } 
+    setAddToCartBtns();
+    setBuyBtns();
+}
+>>>>>>> tpe2
