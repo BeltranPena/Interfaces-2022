@@ -228,14 +228,17 @@ footer div.leyend {
     /* margin: auto; */
 }
 
+.std-circle {
+    width: 2rem;
+    height: 2rem;
+}
+
 .element {
     position: absolute;
     border-radius:50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 2rem;
-    height: 2rem;
 }
 
 .inactive {
@@ -522,10 +525,9 @@ button img {
 }
 
 .small-loading {
-    width: .05em;
-    margin: 0;
-    padding: 0;
-}
+    width: 1.5em;
+    height: .5em;
+}  
 
 .loading-img-div {
     font-size: .9em;

@@ -117,7 +117,7 @@ function createCardOverlay(price = null, className = null) {
         //y los botones (comprar y agregar al carrito)...
         btns.push(createBtn("buyBtn", "buyBtn", "Comprar", null));
         btns.push(createBtn("cartBtn", "cartBtn", "Agregar al carrito", "images/emptyCart.png"));
-        let fullcartBtn = createBtn("cartBtn", null, "Agregado al carrito", "images/fullCart.png");
+        let fullcartBtn = createBtn("cartBtn", null, "Agregado al carrito", "images/fullcart.png");
         fullcartBtn.classList.add("display-none");
         btns.push(fullcartBtn);
        
@@ -170,7 +170,7 @@ function setAddToCartBtns() {
 
 function setBuyBtns() {
     let downloadTemplate = `<div class="btns-container">
-                                <div class="price"><p>Ya puedes descargar tu juego!!</p></div>
+                                <div class="price"><p>Ya puedes descargar tu juego!</p></div>
                                 <button class="continueBtn" id="downloadBtn"><img src="images/download.png" alt="download"><p>Descargar</p></button>
                             </div>`;
 
@@ -193,9 +193,8 @@ function setBuyBtns() {
 
                 btnsContainer.classList.add("loading-img-div");
 
-                let circle = createCircle();
-                let circles = document.querySelectorAll(".element");
-                circles.forEach((circle) => {circle.classList.add(".small-loading");})
+                let circle = createCircle(true);
+                console.log(circle);
                 btnsContainer.appendChild(circle);
 
                 let bar = createBar();
@@ -205,10 +204,10 @@ function setBuyBtns() {
                 initIntervals();
                 setTimeout(() => {
                     // btnsContainer.innerHTML = `<button class="continueBtn" disabled="disabled"><img src="images/play.png" alt="play"><p>Jugar</p></button>`;
-                    let playBtn =  createBtn("continueBtn", "play-btn", "Jugar", "../images/play.png");
+                    let playBtn =  createBtn("continueBtn", "play-btn", "Jugar", "images/play.png");
                     btnsContainer.replaceChildren(playBtn);
                     playBtn.addEventListener("click", () => {
-                        location.href = "../html/cuatroEnLinea.html";
+                        location.href = "html/cuatroEnLinea.html";
                     });
                 }, 5500);
             });
@@ -219,12 +218,15 @@ function setBuyBtns() {
 
 /*----------------------- Loader -------------------------*/
 
-function createCircle() {
+function createCircle(small = false) {
     let circles = document.createElement("div");
-    circles.classList.add("circle");
+    if(small) circles.classList.add("small-loading-circle");
+    else circles.classList.add("circle");
     for(let i = 0; i < 6; i++) {
         let circle = document.createElement("div");
         circle.classList.add("element", "inactive");
+        if(small) circle.classList.add("small-loading");
+        else circle.classList.add("std-circle");
         circles.appendChild(circle);
     }
     return circles;
