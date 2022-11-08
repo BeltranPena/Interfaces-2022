@@ -743,9 +743,9 @@ div.link-copy {
 /*-----------------    Tercera entrega --------------------------------*/
 
 div.game-container, div#desktop-first-view {
-    width: 80vw;
     min-width: 15em;
     height: 75vh;
+    width: 80vw;
 }
 
 div.game-container {
@@ -815,25 +815,21 @@ button#restart-btn, button#close-btn  {
 
 div#game-controls {
     display: flex;
-    justify-content: end;
-    padding: 1em;
+    justify-content: space-between;
+}
+
+div#game-controls-btns {
+    display: flex;
+    flex-direction: row;
 }
 
 /*---- Game canvas  -----*/
 div#game-canvas {
+    width: 80vw;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;   
 }
-
-
-div#player1-pieces, div#player1-pieces {
-    width: 50%;
-} 
-
-
-
-
 
 /*-------- timer -----------*/
 .timer {
@@ -841,7 +837,7 @@ div#player1-pieces, div#player1-pieces {
     display: inline-block;
     padding: 14px 32px;
     border-radius: 30px;
-    color:#533A76;
+    color: #FFFFFF;
 }
 
 .timer__part {

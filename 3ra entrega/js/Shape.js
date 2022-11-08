@@ -1,11 +1,12 @@
-class Element {
+class Shape {
 
-    constructor (x, y, fill, context) {
+    constructor (x, y, context) {
         this.x = x;
         this.y = y;
-        this.fill = fill;
         this.cxt = context;
         this.resaltado = false;
+        this.fillStyle = "grey";
+        this.strokeStyle = "grey";
         this.resaltadoStyle = "red";
     }
 
@@ -29,9 +30,12 @@ class Element {
 
     getY() { return this.y;}
 
+    getCxt() {return this.cxt;}
+
     setResaltado(resaltado) {
         this.resaltado = resaltado;
     }
 
-    // isPointInside(x, y) {};
+    isPointInside() {}
+
 }

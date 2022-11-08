@@ -95,26 +95,25 @@
             <div id="desktop-first-view">
 
                 <!-- Settings View -->
-                
                 <div id="game-settings"> 
                     <form action="" id="game-settings-form">
                         <h2>Cuatro casas en línea</h2>
                         <section class="board-settings">
                             <h3>Escoge el modo:</h3>
                             <div>
-                                <input type="radio" name="board-lines" id="4-lines" value="4" checked>
+                                <input type="radio" name="board-lines" value="friendly" checked>
                                 <label for="radio">Hufflepuff <span>Friendly Mode</span></label>
                             </div>
                             <div>
-                                <input type="radio" name="board-lines" id="5-lines" value="5">
+                                <input type="radio" name="board-lines" value="brave">
                                 <label for="radio">Gryffindor <span>Brave Mode</span></label>
                             </div>
                             <div>
-                                <input type="radio" name="board-lines" id="6-lines" value="6">
+                                <input type="radio" name="board-lines" value="clever">
                                 <label for="radio">Ravenclaw <span>Clever Mode</span></label>
                             </div>
                             <div>
-                                <input type="radio" name="board-lines" id="7-lines" value="7">
+                                <input type="radio" name="board-lines" value="ambicious">
                                 <label for="radio">Slytherin <span>Ambicious Mode</span></label>
                             </div>
                         </section>
@@ -148,30 +147,24 @@
 
                 <!-- Game View -->
                 <div id="game-box">
-                    <div id="game-controls">
+                    <div id="game-controls">  
                         <div id="timer-box" class="timer"></div>
-                        <div id="restart-box">
-                            <button type="button" id="restart-btn"><span class="material-icons">restart_alt</span></button>
-                        </div>
-                        <div id="close-box">
-                            <button type="button" id="close-btn"><span class="material-icons">close</span></button>
+                        <div id="game-controls-btns">
+                            <div id="restart-box">
+                                <button type="button" id="restart-btn"><span class="material-icons">restart_alt</span></button>
+                            </div>
+                            <div id="close-box">
+                                <button type="button" id="close-btn"><span class="material-icons">close</span></button>
+                            </div>
                         </div>
                     </div>
-                    
                     <div id="game-canvas">
                         <div id="board">
-                            <canvas id="game-box-canvas" width="900" height="350" style="border:1px solid #000000;"></canvas>
-                        </div>
-                        <div id="player1-pieces">
-                            <canvas id="pieces-box-one" width="650" height="100" style="border:1px solid #000000;"></canvas>
-                        </div>
-                        <div id="player2-pieces">
-                            <canvas id="pieces-box-two" width="650" height="100" style="border:1px solid #000000;"></canvas>
+                            <canvas id="game-box-canvas" width="1100" height="400"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
         <!---------------------------------------------------------------------------------->
 
@@ -547,10 +540,12 @@
 
 
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+    <script type="text/javascript" src="../js/Timer.js"></script>
+    <script type="text/javascript" src="../js/Shape.js"></script>
+    <script type="text/javascript" src="../js/Piece.js"></script>
+    <script type="text/javascript" src="../js/Spot.js"></script>
+    <script type="text/javascript" src="../js/Board.js"></script>
     <script type="text/javascript" src="../js/script.js"></script>
-    <script type="text/javascript" src="../js/timer.js"></script>
-    <script type="text/javascript" src="../js/element.js"></script>
-    <script type="text/javascript" src="../js/piece.js"></script>
-    <script type="text/javascript" src="../js/game.js"></script>
+    <script type="text/javascript" src="../js/game_script.js"></script>
 </body>
 </html>
