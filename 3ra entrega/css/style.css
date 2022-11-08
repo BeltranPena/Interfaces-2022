@@ -228,17 +228,14 @@ footer div.leyend {
     /* margin: auto; */
 }
 
-.std-circle {
-    width: 2rem;
-    height: 2rem;
-}
-
 .element {
     position: absolute;
     border-radius:50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    width: 2rem;
+    height: 2rem;
 }
 
 .inactive {
@@ -491,7 +488,7 @@ button img {
     padding-right: .7rem;
 }
 
-.buyBtn, .cartBtn, .continueBtn, .playSettingsBtn {
+.buyBtn, .cartBtn, .continueBtn {
     height: 2.4rem;
     min-width: 10em;
     border-radius: 3px;
@@ -502,7 +499,7 @@ button img {
     letter-spacing: .08rem;
 }
 
-.buyBtn, .continueBtn, .playSettingsBtn {
+.buyBtn, .continueBtn {
     background-color: #17E8CF;
     color:#120525;
     font-weight: 600;
@@ -515,19 +512,20 @@ button img {
     color: #17E8CF;
 }
 
-.continueBtn:hover, .buyBtn:hover, .cartBtn:hover, .playSettingsBtn:hover, button#restart-btn:hover, button#close-btn:hover {
+.continueBtn:hover, .buyBtn:hover, .cartBtn:hover {
     filter: drop-shadow(-5px 7px 14px rgba(0, 0, 0, 0.45));
 }
 
-.continueBtn:active, .playSettingsBtn:active {
+.continueBtn:active {
     background-color:#120525;
     color: #17E8CF;
 }
 
 .small-loading {
-    width: 1.5em;
-    height: .5em;
-}  
+    width: .05em;
+    margin: 0;
+    padding: 0;
+}
 
 .loading-img-div {
     font-size: .9em;
@@ -599,7 +597,6 @@ nav.breadcrumbs {
     position: sticky;
     align-self: flex-start;
     padding-left: 1em;
-    z-index: 0;                     /* correción índice*/
 }
 
 nav.breadcrumbs ul {
@@ -740,16 +737,13 @@ div.link-copy {
     transition: all .5s ease;
 }
 
-/*-----------------    Tercera entrega --------------------------------*/
-
-div.game-container, div#desktop-first-view {
-    min-width: 15em;
-    height: 75vh;
-    width: 80vw;
-}
+/*------------------*/
 
 div.game-container {
     position: relative;
+    width: 80vw;
+    min-width: 15em;
+    height: 75vh;
     background: rgba(217, 217, 217, 0.5);
     border: 3px solid #120525;
     border-radius: 3px;
@@ -760,112 +754,6 @@ div.game-container {
     align-items: space-around;
     margin-top: 1.5em;
 }
-
-/*--------------------------------------------------------*/
-
-div#desktop-first-view {
-    background-image: url("../images/juego/background1.jpg");
-}
-
-div#game-settings {
-    margin: 3em;
-    letter-spacing: .1em;
-    color: #120525;
-    display: flex;
-}
-
-div#game-settings form {
-    width: 40%;
-}
-
-div#game-settings h2 {
-    padding-bottom: .5em;
-    font-size: 2em;
-}
-
-div#game-settings form section {
-    margin: 2em;
-}
-
-div#game-settings form section.board-settings {
-    margin-top: 0;
-    flex-wrap: wrap;
-}
-
-div#game-settings form section.board-settings span {
-    font-style: italic;
-}
-
-div#game-settings div.settings-confirm {
-    display: flex;
-    align-items: flex-end;
-}
-
-.piece-settings-btn-active {
-    border: 3px solid #120525;
-}
-
-/*----   Game controls  ----*/
-button#restart-btn, button#close-btn  {
-    height: 4em;
-    width: 4em;
-    margin: 1em;
-    border-radius: 50%;
-}
-
-div#game-controls {
-    display: flex;
-    justify-content: space-between;
-}
-
-div#game-controls-btns {
-    display: flex;
-    flex-direction: row;
-}
-
-/*---- Game canvas  -----*/
-div#game-canvas {
-    width: 80vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;   
-}
-
-/*-------- timer -----------*/
-.timer {
-    font-family: sans-serif;
-    display: inline-block;
-    padding: 14px 32px;
-    border-radius: 30px;
-    color: #FFFFFF;
-}
-
-.timer__part {
-    font-size: 36px;
-    font-weight: bold;
-}
-
-.timer__btn {
-    width: 50px;
-    height: 50px;
-    margin-left: 16px;
-    border-radius: 50%;
-    border: none;
-    color: white;
-    background: #8208e6;
-    cursor: pointer;
-}
-
-.timer__btn--start {
-    background: #00b84c;
-}
-
-.timer__btn--stop {
-    background: #ff0256;
-}
-  
-
-/*-------------------------------------------------------------------------*/
 
 div.game-bkg-images {
     display: flex;
@@ -1403,7 +1291,7 @@ div.feature-card p {
         min-height: 18.5em;
     }
 
-    .buyBtn, .cartBtn, .continueBtn, .playSettingsBtn {
+    .buyBtn, .cartBtn, .continueBtn {
         height: 3rem;
         /* min-width: 16em; */
         margin: 1rem;

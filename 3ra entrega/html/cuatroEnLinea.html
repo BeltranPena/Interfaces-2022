@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>The Games Store</title>
 </head>
 <body>
@@ -62,114 +61,58 @@
                 <li>>> Cuatro casas en línea</li>
             </ul>
         </nav> 
+        <div class="game-container">
 
-        <!------------------------------  Tercera entrega ---------------------------------->
-
-        <!---------------------------------- Game -------------------------------------->
-        <div class="game-container" id="game-container">
-
-            <!---------------------------------- Mobile first view -------------------------------------->
-            <div id="mobile-first-view">
-                <div class="game-bkg-images" >                              <!-- background -->
-                    <div>
-                        <div><img src="../images/juego/hufflepuff.png" alt=""></div>
-                        <div><img src="../images/juego/ravenclaw.png" alt=""></div>
-                    </div>
-                    <div><img id="center-bkg-img" src="../images/juego/antique.png" alt=""></div>
-                    <div>
-                        <div><img src="../images/juego/gryffindor.png" alt=""></div>
-                        <div><img src="../images/juego/slytherin.png" alt=""></div>
-                    </div>
-                </div>
-                <div class="game-container-background">                 <!-- card functionality -->
-                    <div class="btns-container" id="buy-first-view">        
-                        <div class="price"><p id="price">$159.99</p></div>
-                        <button class="buyBtn" id="buyBtn"><p>Comprar</p></button>
-                        <button class="cartBtn" id="cartBtn"><img src="../images/emptyCart.png" alt="play"><p>Agregar al carrito</p></button>
-                        <button class="cartBtn display-none"><img src="../images/fullCart.png" alt="play"><p>Agregado al carrito</p></button>
-                    </div>
-                </div>
-            </div>
-            
-            <!---------------------------------- Desktop view -------------------------------------->
-            <div id="desktop-first-view">
-
-                <!-- Settings View -->
-                <div id="game-settings"> 
-                    <form action="" id="game-settings-form">
-                        <h2>Cuatro casas en línea</h2>
-                        <section class="board-settings">
-                            <h3>Escoge el modo:</h3>
-                            <div>
-                                <input type="radio" name="board-lines" value="friendly" checked>
-                                <label for="radio">Hufflepuff <span>Friendly Mode</span></label>
-                            </div>
-                            <div>
-                                <input type="radio" name="board-lines" value="brave">
-                                <label for="radio">Gryffindor <span>Brave Mode</span></label>
-                            </div>
-                            <div>
-                                <input type="radio" name="board-lines" value="clever">
-                                <label for="radio">Ravenclaw <span>Clever Mode</span></label>
-                            </div>
-                            <div>
-                                <input type="radio" name="board-lines" value="ambicious">
-                                <label for="radio">Slytherin <span>Ambicious Mode</span></label>
-                            </div>
-                        </section>
-                        <section class="piece-settings">
-                            <h3>Escoge tu casa: </h3>
-                            <div>
-                                <h4>Jugador 1</h4>
-                                <div id="player-1-piece-btns">
-                                    <button style = "background: url('../images/juego/hufflepuff.png') center no-repeat; background-size: cover; border-radius: 50%; height: 4em; width: 4em;" value="hufflepuff"></button>
-                                    <button style = "background: url('../images/juego/gryffindor.png') center no-repeat; background-size: cover; border-radius: 50%; height: 4em; width: 4em;" value="gryffindor"></button>
-                                    <button style = "background: url('../images/juego/ravenclaw.png') center no-repeat; background-size: cover; border-radius: 50%; height: 4em; width: 4em;" value="ravenclaw"></button>
-                                    <button style = "background: url('../images/juego/slytherin.png') center no-repeat; background-size: cover; border-radius: 50%; height: 4em; width: 4em;" value="slytherin"></button>
-                                </div>
-                            </div>
-                            <div>
-                                <h4>Jugador 2</h4>
-                                <div id="player-2-piece-btns">
-                                    <button style = "background: url('../images/juego/hufflepuff.png') center no-repeat; background-size: cover; border-radius: 50%; height: 4em; width: 4em;" value="hufflepuff"></button>
-                                    <button style = "background: url('../images/juego/gryffindor.png') center no-repeat; background-size: cover; border-radius: 50%; height: 4em; width: 4em;" value="gryffindor"></button>
-                                    <button style = "background: url('../images/juego/ravenclaw.png') center no-repeat; background-size: cover; border-radius: 50%; height: 4em; width: 4em;" value="ravenclaw"></button>
-                                    <button style = "background: url('../images/juego/slytherin.png') center no-repeat; background-size: cover; border-radius: 50%; height: 4em; width: 4em;" value="slytherin"></button>
-                                </div>
-                            </div>
-                        </section>
-                    </form>
-                    <div class="settings-confirm">
-                        <button type="button" id="play-settings-btn" class="playSettingsBtn"><img src="../images/play.png" alt="play"><p>Jugar</p></button>                    
-                    </div>
-                </div> 
-                
-
-                <!-- Game View -->
-                <div id="game-box">
-                    <div id="game-controls">  
-                        <div id="timer-box" class="timer"></div>
-                        <div id="game-controls-btns">
-                            <div id="restart-box">
-                                <button type="button" id="restart-btn"><span class="material-icons">restart_alt</span></button>
-                            </div>
-                            <div id="close-box">
-                                <button type="button" id="close-btn"><span class="material-icons">close</span></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="game-canvas">
-                        <div id="board">
-                            <canvas id="game-box-canvas" width="1100" height="400"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <canvas id="canvas" width="1350" height="600"></canvas>
+           
         </div>
-        <!---------------------------------------------------------------------------------->
 
+        <div class="menus">
+            <!-- menú jugador 1 -->
+            <div id="menu-jugador-1">
+                <h1>Jugador 1</h1>
+                <h2>Elegí tu ficha</h2>                    
+                <select id="select-image-player-1" name="select">
+                    <option value="gryffindor" selected>Gryffindor</option>
+                    <option value="ravenclaw">Ravenclaw</option>
+                    <option value="slytherin">Slytherin</option>
+                    <option value="hufflepuff">Hufflepuff</option>
+                </select>
+                <div>
+                    <button id="ficha-jugador-1">Seleccionar</button>
+                </div>                    
+            </div>
+            <!-- menú jugador 2 -->
+            <div id="menu-jugador-2">
+                <h1>Jugador 2</h1>
+                <h2>Elegí tu ficha</h2>
+                <select name="select" id="select-image-player-2">
+                    <option value="gryffindor">Gryffindor</option>
+                    <option value="ravenclaw" selected>Ravenclaw</option>
+                    <option value="slytherin">Slytherin</option>
+                    <option value="hufflepuff">Hufflepuff</option>
+                </select>
+                <button id="ficha-jugador-2">Seleccionar</button>
+            </div>
+            <!-- menú  objetivo-->
+            <div id="menu-cant-objetivo">
+                <h1>Elegí la cantidad de fichas a unir</h1>                    
+                <select name="select" id="objetivo-juego">
+                    <option value="4" selected>4</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+                <button id="click-objetivo-juego">Seleccionar</button>
+            </div>
+            <div id="misma-ficha">
 
-        <!---------------------------------- Game Description -------------------------------------->
+            </div>
+            <div id="seccion-turno">
+                <h1 id="turno"></h1>
+                <img id="img-player-actual">                               
+            </div> 
+        </div>
         <div class="middle-wrapper">
             <div class="game-description">
                 <div class="game-header">
@@ -226,22 +169,19 @@
                 <div class="features-cards-list">
                     <div class="feature-card">
                         <div><img src="../images/juego/hufflepuff.png" alt=""></div>
-                        <div><p>La ficha amarilla lleva el escudo de la casa  Hufflepuff, ideal para aquellos jugadores leales y solidarios.</p></div>
+                        <div><p>Las fichas bordó representan la casa Gryffindor, hogar de personalidades valientes y, a veces, imprudentes en su valentía.</p></div>
                     </div>
                     <div class="feature-card">
                         <div><img src="../images/juego/gryffindor.png" alt=""></div>
-                        <div><p>
-                            Las fichas bordó representan la casa Gryffindor, hogar de personalidades valientes y, a veces, imprudentes en su valentía.</p></div>
+                        <div><p>Las fichas azules llevan el escudo de la casa Ravenclaw,  cuyos integrantes se caracterizan por su inteligencia y alto rendimiento.</p></div>
                     </div>
                     <div class="feature-card">
                         <div><img src="../images/juego/ravenclaw.png" alt=""></div>
-                        <div><p>
-                            Las fichas azules llevan el escudo de la casa Ravenclaw,  cuyos integrantes se caracterizan por su inteligencia y alto rendimiento.</p></div>
+                        <div><p>La ficha verde representa a la casa Slytherin, propia de las personalidades de gran astucia y ambición.</p></div>
                     </div>
                     <div class="feature-card">
                         <div><img src="../images/juego/slytherin.png" alt=""></div>
-                        <div><p>
-                            La ficha verde representa a la casa Slytherin, propia de las personalidades de gran astucia y ambición.</p></div>
+                        <div><p>La ficha amarilla lleva el escudo de la casa  Hufflepuff, ideal para aquellos jugadores leales y solidarios.</p></div>
                     </div>
                 </div>
             </div>
@@ -272,7 +212,6 @@
             </div>
         </div>
         
-        <!---------------------------------- Game Forum -------------------------------------->
         <section class="comunidad">
             <h3>Comunidad</h3>
                 <div class="cajaComentario">
@@ -432,7 +371,6 @@
                 </div>
             </div>
         </section> 
-
     </div>
 
     <!--------------------------------   Share Pop Up --------------------------------------------------->
@@ -483,7 +421,8 @@
     </div>
     <div id="overlay"></div>
     <!----------------------------------------------------------------------------------------------------->
-  
+
+    
     <footer>
         <div>
             <div>
@@ -537,15 +476,15 @@
             <p>The Game Store © 2016 <a href="../html/about.html">Creado por BGIT</a></p>
         </div>
     </footer>
-
-
+    <script type="text/javascript" src="../js/elemento.js"></script>
+    <script type="text/javascript" src="../js/celda.js"></script>
+    <script type="text/javascript" src="../js/jugador.js"></script>
+    <script type="text/javascript" src="../js/ficha.js"></script>
+    <script type="text/javascript" src="../js/tablero.js"></script>
+    <script type="text/javascript" src="../js/juego.js"></script>
+    <script type="text/javascript" src="../js/index.js"></script>
+    <script type="text/javascript" src="../js/game.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
-    <script type="text/javascript" src="../js/Timer.js"></script>
-    <script type="text/javascript" src="../js/Shape.js"></script>
-    <script type="text/javascript" src="../js/Piece.js"></script>
-    <script type="text/javascript" src="../js/Spot.js"></script>
-    <script type="text/javascript" src="../js/Board.js"></script>
     <script type="text/javascript" src="../js/script.js"></script>
-    <script type="text/javascript" src="../js/game_script.js"></script>
 </body>
 </html>
