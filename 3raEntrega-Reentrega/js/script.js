@@ -5,8 +5,15 @@
 
 let menuBtn = document.querySelector("#menu-btn");
 let vertNav = document.querySelector("#vertical-nav");
+let barra1 = document.querySelector(".barra1");
+let barra2 = document.querySelector(".barra2");
+let barra3 = document.querySelector(".barra3");
 menuBtn.addEventListener("click", () => {
     vertNav.classList.toggle("display-none");
+    barra1.classList.toggle("top");
+    barra2.classList.toggle("mid");
+    barra3.classList.toggle("bot");
+    console.log("entra");
 });
 
 
